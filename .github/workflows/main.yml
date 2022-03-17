@@ -10,10 +10,11 @@ on:
 
 
 jobs:
-  build:
+   build:
 
-#Máquina ou ambiente de execução
-runs-on: ubuntu-latest
+  #Máquina ou ambiente de execução
+    runs-on: ubuntu-latest
+
 
     steps:
 
@@ -27,7 +28,7 @@ runs-on: ubuntu-latest
         node-version: 14.X
    
       
-   - run: npm install
+    - run: npm install
    
     - run: npm run cy:run
       continue-on-error: true
@@ -38,9 +39,9 @@ runs-on: ubuntu-latest
 
 # Github Pages (publica o relatório de teste)
     - name: Deploy to GitHub Pages
-    uses: JamesIves/github-pages-deploy-action@v4.2.5
-    with:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    BRANCH: gh-pages
-    FOLDER: mochawesome-report
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: mochawesome-report
     
