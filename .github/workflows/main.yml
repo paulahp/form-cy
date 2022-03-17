@@ -15,7 +15,6 @@ jobs:
 #Máquina ou ambiente de execução
 runs-on: ubuntu-latest
 
-# Passos
     steps:
 
 # Download do código
